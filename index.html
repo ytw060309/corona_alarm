@@ -9,16 +9,16 @@
     <input type="button" onClick="aa();" value="Friend"/>
     <h2 id = "text">text</h2>
     
-<script type="text/javascript">
+<script type="text/javascript"> 
+    Kakao.init("0ee34344cd813b58a056b8baae76c4c5");
+   
     function sendLinkCustom() {
-        Kakao.init("0ee34344cd813b58a056b8baae76c4c5");
         Kakao.Link.sendCustom({
             templateId: 47496
         });
     }
     
     function aa(){
-        Kakao.init("0ee34344cd813b58a056b8baae76c4c5");
         Kakao.API.request({
           url: '/v1/api/talk/friends',
           success: function(response) {
