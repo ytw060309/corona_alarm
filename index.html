@@ -1,5 +1,3 @@
-< index.html >
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -8,12 +6,25 @@
 </head>
 <body>
     <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+    <input type="button" onClick="aa();" value="Friend"/>
     
 <script type="text/javascript">
     function sendLinkCustom() {
         Kakao.init("0ee34344cd813b58a056b8baae76c4c5");
         Kakao.Link.sendCustom({
             templateId: 47496
+        });
+    }
+    
+    function aa(){
+        Kakao.API.request({
+          url: '/v1/api/talk/friends',
+          success: function(response) {
+            console.log(response);
+          },
+          fail: function(error) {
+            console.log(error);
+          }
         });
     }
 </script>
