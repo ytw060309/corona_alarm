@@ -7,6 +7,7 @@
 <body>
     <input type="button" onClick="sendLinkCustom();" value="Custom"/>
     <input type="button" onClick="aa();" value="Friend"/>
+    <h2 id = "text">text</h2>
     
 <script type="text/javascript">
     function sendLinkCustom() {
@@ -21,6 +22,8 @@
           url: '/v1/api/talk/friends',
           success: function(response) {
             console.log(response);
+            var element = document.getElementById("text");
+            element.innerText = response;
           },
           fail: function(error) {
             console.log(error);
